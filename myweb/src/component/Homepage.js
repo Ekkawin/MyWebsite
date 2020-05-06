@@ -90,6 +90,9 @@ class Homepage extends Component {
             </p>
           </div>
         </div>
+        <div className="footer">
+          <p>Ekkawin Viriyapak</p>
+        </div>
       </div>
     );
   }
