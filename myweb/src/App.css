@@ -116,3 +116,16 @@ font-family: 'Sarabun', sans-serif;
   display: flex;
   justify-content: center;
 }
+.background {
+  display: block;
+  margin: 10px 30px;
+}
+.background .pagecontent {
+  display: block;
+  margin-top: 40px;
+}
+.background .pagecontent img {
+  margin-left: 25%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

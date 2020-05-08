@@ -6,6 +6,8 @@ import Header from './component/Header';
 import Homepage from './component/Homepage';
 import Extraact from './component/Extraact';
 import Resume from './component/Resume';
+import ItProj from './component/ItProj';
+import Intern from './component/Intern';
 
 class App extends Component {
   render() {
@@ -15,6 +17,8 @@ class App extends Component {
         <Header />
         <Route exact path="/" component={Homepage} />
         <Route path="/extraactivities" component={Extraact} />
+        <Route path="/itproject" component={ItProj} />
+        <Route path="/internship" component={Intern} />
         <Route exact path="/resume" component={Resume} />
       </div>
     );
