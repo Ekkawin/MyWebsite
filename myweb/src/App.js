@@ -8,6 +8,7 @@ import Extraact from './component/Extraact';
 import Resume from './component/Resume';
 import ItProj from './component/ItProj';
 import Intern from './component/Intern';
+import Contact from './component/Contact';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
         <Route path="/extraactivities" component={Extraact} />
         <Route path="/itproject" component={ItProj} />
         <Route path="/internship" component={Intern} />
+        <Route exact path="/contactme" component={Contact} />
         <Route exact path="/resume" component={Resume} />
       </div>
     );
