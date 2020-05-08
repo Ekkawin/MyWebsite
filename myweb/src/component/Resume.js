@@ -11,7 +11,7 @@ class Header extends Component {
     let userroute = this.state.path == '/';
 
     return (
-      <div>
+      <div class="resume">
         <img src={resume}></img>
       </div>
     );

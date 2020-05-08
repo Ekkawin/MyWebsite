@@ -112,3 +112,7 @@ font-family: 'Sarabun', sans-serif;
   font-size: 15px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.resume {
+  display: flex;
+  justify-content: center;
+}
