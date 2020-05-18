@@ -27,7 +27,7 @@ export default class result extends Component {
   };
 
   async componentDidMount() {
-    const profile = await axios.post('http://localhost:5000/apifind', {
+    const profile = await axios.post('/apifind', {
       name: this.props.location.name,
     });
 
@@ -56,7 +56,7 @@ export default class result extends Component {
     }
   }
   onClick = async () => {
-    await axios.post('http://localhost:5000/apipost');
+    await axios.post('/apipost');
     this.setState({
       name: '',
       banana: 0,
