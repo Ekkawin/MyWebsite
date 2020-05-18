@@ -9,6 +9,8 @@ import Resume from './component/Resume';
 import ItProj from './component/ItProj';
 import Intern from './component/Intern';
 import Contact from './component/Contact';
+import firstpage from './component/firstpage';
+import Result from './component/Result';
 
 class App extends Component {
   render() {
@@ -22,6 +24,8 @@ class App extends Component {
         <Route path="/internship" component={Intern} />
         <Route exact path="/contactme" component={Contact} />
         <Route exact path="/resume" component={Resume} />
+        <Route exact path="/miniproj" component={firstpage} />
+        <Route exact path="/store" component={Result} />
       </div>
     );
   }

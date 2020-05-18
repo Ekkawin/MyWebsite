@@ -1,7 +1,29 @@
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
+const key = require('./config/key');
+const mongoose = require('mongoose');
+const Profile = require('./mongoose/schema');
 
+mongoose.connect(key.mongoURI);
 const app = express();
+app.use(bodyParser.json());
+
+app.post('/apipost', async (req, res) => {
+  console.log(req.body);
+  const user = req.body;
+  const profile = new Profile(user);
+  await profile.save();
+  console.log(typeof req.body);
+  res.send(profile);
+});
+app.post('/apifind', async (req, res) => {
+  console.log(req.body);
+  const find = req.body;
+  const findprofile = await Profile.findOne(find);
+  console.log(findprofile);
+  res.json(findprofile);
+});
 
 if (process.env.NODE_ENV === 'production') {
   // Express will serve up production assets

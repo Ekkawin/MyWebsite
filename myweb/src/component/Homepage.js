@@ -21,6 +21,33 @@ class Homepage extends Component {
         </div>
         <div className="flex">
           <div className="flexbackground">
+            <a href="/extraactivities">Summary of me</a>
+            <a href="/extraactivities">
+              <img
+                src={act1}
+                height="300px"
+                href="/extraactivites"
+                className="center"
+              />
+            </a>
+            <p>เดี๋ยวเขียน</p>
+          </div>
+
+          <div className="flexbackground">
+            <a href="/miniproj">Fullstack Project</a>
+            <a href="/miniproj">
+              <img
+                src={it1}
+                height="300px"
+                href="/miniproj"
+                className="center"
+              />
+            </a>
+            <p>เดี๋ยวเขียน</p>
+          </div>
+        </div>
+        <div className="flex">
+          <div className="flexbackground">
             <a href="/extraactivities">Extra Activities</a>
             <a href="/extraactivities">
               <img
