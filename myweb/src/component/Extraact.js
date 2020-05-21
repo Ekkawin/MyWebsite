@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import rang1 from '../image/Rang1.JPG';
 import pong1 from '../image/Pong1.jpg';
+import ReactGA from 'react-ga';
 import Header from './Header';
 import '../App.css';
 import act1 from '../image/Act1.png';
@@ -9,6 +10,9 @@ class Extraact extends Component {
   state = {
     path: '/',
   };
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname);
+  }
 
   render() {
     let userroute = this.state.path == '/';

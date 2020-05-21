@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import '../App.css';
 import resume from '../image/Resume.png';
+import ReactGA from 'react-ga';
 
 class Header extends Component {
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname);
+  }
+
   state = {
     path: '/',
   };

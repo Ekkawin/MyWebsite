@@ -9,7 +9,7 @@ mongoose.connect(key.mongoURI);
 const app = express();
 app.use(bodyParser.json());
 
-app.post('/apipost', async (req, res) => {
+app.post('/apicreate', async (req, res) => {
   console.log(req.body);
   const user = req.body;
   const profile = new Profile(user);
@@ -23,6 +23,25 @@ app.post('/apifind', async (req, res) => {
   const findprofile = await Profile.findOne(find);
   console.log(findprofile);
   res.json(findprofile);
+});
+app.post('/apidelete', async (req, res) => {
+  console.log(req.body);
+  const find = req.body;
+  const findprofile = await Profile.findOneAndRemove(find);
+  console.log(findprofile);
+  res.json(findprofile);
+});
+app.post('/apiupdate', async (req, res) => {
+  console.log('update');
+  console.log(req.body);
+  const user = req.body;
+  const profile = await Profile.findOneAndUpdate(
+    { name: user.name },
+    { banana: user.banana, apple: user.apple, orange: user.orange }
+  );
+  await profile.save();
+  console.log(typeof req.body);
+  res.send('profile');
 });
 
 if (process.env.NODE_ENV === 'production') {

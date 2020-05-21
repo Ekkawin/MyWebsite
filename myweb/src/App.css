@@ -132,3 +132,46 @@ font-family: 'Sarabun', sans-serif;
 .store {
   margin: 20% 50px;
 }
+.flexcard {
+  display: flex;
+  margin: 30px 5%;
+}
+.flexcard .card {
+  margin: 20px;
+}
+
+.icon {
+  font-size: 32px;
+  color: #ffe95e;
+  text-align: center;
+}
+.greet {
+  text-align: center;
+}
+.buttonalign {
+  text-align: right;
+  margin-right: 10%;
+}
+.flex .flexsum {
+  flex: 1;
+  height: 100px;
+  margin: 5px;
+  text-align: center;
+  background-color: #e7d992;
+}
+.flex .flexsum a {
+  font-size: 36px;
+  color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container {
+  margin: 30px;
+  margin-left: 20%;
+  font-size: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.container p {
+  padding-top: 70px;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

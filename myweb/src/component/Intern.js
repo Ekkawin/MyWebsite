@@ -3,8 +3,12 @@ import '../App.css';
 import zofair from '../image/Zofair.png';
 import intern2 from '../image/Intern2.JPG';
 import mitsu from '../image/Mitsu.jpg';
+import ReactGA from 'react-ga';
 
 export default class Intern extends Component {
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname);
+  }
   render() {
     return (
       <div className="background">

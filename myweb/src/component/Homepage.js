@@ -5,8 +5,22 @@ import act1 from '../image/Act1.png';
 import it1 from '../image/IT1.JPG';
 import intern1 from '../image/Intern2.png';
 import hobby1 from '../image/Hobby1.png';
+import { Button } from 'reactstrap';
+import ReactGA from 'react-ga';
 
 class Homepage extends Component {
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname);
+  }
+  onClick = (e) => {
+    switch (e.target.id) {
+      case 'summary':
+        return this.props.history.push({ pathname: '/summary' });
+      case 'fullstack':
+        return this.props.history.push({ pathname: '/miniproj' });
+    }
+  };
+
   render() {
     return (
       <div>
@@ -20,30 +34,20 @@ class Homepage extends Component {
           </p>
         </div>
         <div className="flex">
-          <div className="flexbackground">
-            <a href="/extraactivities">Summary of me</a>
-            <a href="/extraactivities">
-              <img
-                src={act1}
-                height="300px"
-                href="/extraactivites"
-                className="center"
-              />
-            </a>
-            <p>เดี๋ยวเขียน</p>
+          <div className="flexsum">
+            <a href="/summary">Summary of me</a>
+            <br></br>
+            <Button onClick={this.onClick} color="warning" id="summary">
+              Click to sumumary of me
+            </Button>
           </div>
 
-          <div className="flexbackground">
+          <div className="flexsum">
             <a href="/miniproj">Fullstack Project</a>
-            <a href="/miniproj">
-              <img
-                src={it1}
-                height="300px"
-                href="/miniproj"
-                className="center"
-              />
-            </a>
-            <p>เดี๋ยวเขียน</p>
+            <br></br>
+            <Button onClick={this.onClick} color="warning" id="fullstack">
+              Click to see my project
+            </Button>
           </div>
         </div>
         <div className="flex">
@@ -60,7 +64,7 @@ class Homepage extends Component {
             <p>
               ส่วนนี้เป็นส่วนกิจกรรมเสริมที่ผมทำขณะที่กำลังศึกษาอยู่ในรั้ว
               <br></br>จุฬาลงกรณ์มหาวิทยาลัยนะครับ กิจกรรมพวกนี้ส่วนใหญ่
-              <br></br>จะเสริมทักษะทางด้วนอารมณ์(Soft Skill)
+              <br></br>จะเสริมทักษะทางด้kนอารมณ์(Soft Skill)
             </p>
           </div>
 
@@ -75,8 +79,8 @@ class Homepage extends Component {
               />
             </a>
             <p>
-              ส่วนนี้เป็นส่วนของโปรเจ็คที่เกี่ยวกับเทคโนโลยีสารสนเทศ (IT)
-              <br></br>ถึงแม่ผมจะเรียนเกี่ยวกับยานยนต์เป็นส่วนใหญ๋
+              ส่วนนี้เป็นส่วนของโครงงานที่เกี่ยวกับเทคโนโลยีสารสนเทศ (IT)
+              <br></br>ถึงแม้ผมจะเรียนเกี่ยวกับยานยนต์เป็นส่วนใหญ่
               <br></br>แต่มันก็มีส่วนเกี่ยวข้องกับเทคโนโลยี
               และทำให้ผมได้ต่อยอดมาถึงตรงนี้
             </p>
@@ -119,6 +123,7 @@ class Homepage extends Component {
         </div>
         <div className="footer">
           <p>Ekkawin Viriyapak</p>
+          <p>Email: ekkawin.v@gmail.com Tel: 087-500-5777</p>
         </div>
       </div>
     );

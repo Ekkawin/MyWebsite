@@ -11,6 +11,9 @@ import Intern from './component/Intern';
 import Contact from './component/Contact';
 import firstpage from './component/firstpage';
 import Result from './component/Result';
+import Summary from './component/Summary';
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-167342033-1');
 
 class App extends Component {
   render() {
@@ -26,6 +29,7 @@ class App extends Component {
         <Route exact path="/resume" component={Resume} />
         <Route exact path="/miniproj" component={firstpage} />
         <Route exact path="/store" component={Result} />
+        <Route exact path="/summary" component={Summary} />
       </div>
     );
   }

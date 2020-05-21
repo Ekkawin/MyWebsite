@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 import '../App.css';
 import IT1 from '../image/IT1.JPG';
 import senior1 from '../image/Senior1.png';
+import ReactGA from 'react-ga';
 
 export default class ItProj extends Component {
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname);
+  }
+
   render() {
     return (
       <div className="background">

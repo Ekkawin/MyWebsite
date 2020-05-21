@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import ReactGA from 'react-ga';
 
 export default class Contact extends Component {
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname);
+  }
   render() {
     return (
       <div className="background">
