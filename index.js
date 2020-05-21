@@ -15,7 +15,7 @@ app.post('/apicreate', async (req, res) => {
   const profile = new Profile(user);
   await profile.save();
   console.log(typeof req.body);
-  res.send(profile);
+  res.json(profile);
 });
 app.post('/apifind', async (req, res) => {
   console.log(req.body);
