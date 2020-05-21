@@ -70,7 +70,7 @@ export default class result extends Component {
       apple: this.state.apple,
       orange: this.state.orange,
     };
-    if (this.state.status != null) {
+    if (this.state.status != 'New User') {
       const profile = await axios.post('/apiupdate', sendObj);
     } else {
       const profile = await axios.post('/apicreate', sendObj);
