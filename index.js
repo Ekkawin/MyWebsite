@@ -41,7 +41,7 @@ app.post('/apiupdate', async (req, res) => {
   );
   await profile.save();
   console.log(typeof req.body);
-  res.send('profile');
+  res.json(profile);
 });
 
 if (process.env.NODE_ENV === 'production') {
