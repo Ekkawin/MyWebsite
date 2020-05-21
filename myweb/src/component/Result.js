@@ -31,11 +31,10 @@ export default class result extends Component {
       alert('Please input your name before enter store');
       this.props.history.push({ pathname: '/miniproj' });
     }
-    const profile = await axios.post('http://localhost:5000/apifind', {
+    const profile = await axios.post('/apifind', {
       name: this.props.location.name,
     });
-    console.log(this.props.location);
-    console.log('Done sent');
+
     this.setState({ name: this.props.location.name });
     if (profile.data != null) {
       this.setState({
@@ -45,12 +44,9 @@ export default class result extends Component {
         status: 'User',
       });
     }
-    // const ans = await axios.get('http://localhost:5000/apiget');
-    console.log(profile);
-    // console.log(ans);
   }
   deleteUser = async () => {
-    const profile = await axios.post('http://localhost:5000/apidelete', {
+    const profile = await axios.post('/apidelete', {
       name: this.state.name,
     });
     alert('Deleting your profile');
@@ -65,10 +61,7 @@ export default class result extends Component {
     }
   }
   saveUser = async (e) => {
-    console.log('save User');
-    console.log(this.state);
     if (e.target.id == 'buy') {
-      console.log('buy');
       await this.setState({ banana: 0, apple: 0, orange: 0 });
     }
     const sendObj = {
@@ -78,15 +71,9 @@ export default class result extends Component {
       orange: this.state.orange,
     };
     if (this.state.status != null) {
-      const profile = await axios.post(
-        'http://localhost:5000/apiupdate',
-        sendObj
-      );
+      const profile = await axios.post('/apiupdate', sendObj);
     } else {
-      const profile = await axios.post(
-        'http://localhost:5000/apicreate',
-        sendObj
-      );
+      const profile = await axios.post('/apicreate', sendObj);
     }
     alert('Thank for visiting');
     this.props.history.push({ pathname: '/miniproj' });
@@ -123,10 +110,8 @@ export default class result extends Component {
   greetingContent = () => {
     switch (this.state.status) {
       case 'User':
-        console.log('user');
         return <h1>Welcome back {this.state.name}! Hope you enjoy my store</h1>;
       case 'New User':
-        console.log('user');
         return <h1>Welcome {this.state.name}! Hope you enjoy my store</h1>;
       default:
         return;
