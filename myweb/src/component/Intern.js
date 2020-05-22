@@ -11,7 +11,7 @@ export default class Intern extends Component {
   }
   render() {
     return (
-      <div className="background">
+      <div className="container">
         <div className="pagecontent">
           <h5>Pleasant Perfect Co., Ltd.</h5>
           <p>Marketing Execusive</p>
@@ -41,7 +41,9 @@ export default class Intern extends Component {
         <div className="pagecontent">
           <h5>Mitsubishi Motors (Thailand) Co., Ltd.</h5>
           <p>Research and Development</p>
-          <img src={mitsu} width="50%" />
+          <div className="mitsu">
+            <img src={mitsu} width="30%" />
+          </div>
           <p>
             เมื่อจบปี3 ผมต้องไปฝึกงานแบบตรงสาย ซึ่งบริษัทที่รับผมเข้าไปคือ
             มิตซูบิชิ มอเตอร์ ผมเข้าไปทำในแผนกวิจัยและพัฒนาของบริษัท

@@ -12,6 +12,7 @@ import Contact from './component/Contact';
 import firstpage from './component/firstpage';
 import Result from './component/Result';
 import Summary from './component/Summary';
+import Startup from './component/Startup';
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-167342033-1');
 
@@ -30,6 +31,7 @@ class App extends Component {
         <Route exact path="/miniproj" component={firstpage} />
         <Route exact path="/store" component={Result} />
         <Route exact path="/summary" component={Summary} />
+        <Route exact path="/startup" component={Startup} />
       </div>
     );
   }

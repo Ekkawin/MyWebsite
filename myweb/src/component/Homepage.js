@@ -4,7 +4,7 @@ import '../App.css';
 import act1 from '../image/Act1.png';
 import it1 from '../image/IT1.JPG';
 import intern1 from '../image/Intern2.png';
-import hobby1 from '../image/Hobby1.png';
+import startup1 from '../image/Startup1.jpg';
 import { Button } from 'reactstrap';
 import ReactGA from 'react-ga';
 
@@ -26,11 +26,10 @@ class Homepage extends Component {
       <div>
         <div className="homebackground">
           <p>
-            สวัสดีครับ ผมชื่อเอก กำลังเรียนคณะวิศวกรรมศาสตร์
-            สาขาการออกแบบและการผลิตยานยนต์ ภาคอินเตอร์ฯ<br></br>
-            ผมทำเว็บนี้ขึ้นมาเพื่อเก็บประวัติส่วนตัวของผม ผมไม่เคยทำมาก่อนเลย
-            <br></br>
-            ทั้งหมดนี้ถูกเขียนด้วย Java Script ครับ
+            สวัสดีครับ ผมชื่อเอก กำลังจะสำเร็จการศึกษาจากคณะวิศวกรรมศาสตร์
+            จุฬาลงกรณ์มหาวิทยาลัย <br></br>สาขาการออกแบบและการผลิตยานยนต์
+            ภาคอินเตอร์ฯ ผมทำเว็บนี้ขึ้นมา<br></br>เพื่อเก็บประวัติส่วนตัวของผม
+            ผมไม่เคยทำมาก่อนเลย ทั้งหมดนี้ถูกเขียนด้วย Javascript ครับ
           </p>
         </div>
         <div className="flex">
@@ -38,7 +37,7 @@ class Homepage extends Component {
             <a href="/summary">Summary of me</a>
             <br></br>
             <Button onClick={this.onClick} color="warning" id="summary">
-              Click to sumumary of me
+              Click to see summary of me
             </Button>
           </div>
 
@@ -105,19 +104,19 @@ class Homepage extends Component {
           </div>
 
           <div className="flexbackground">
-            <a href="/hobby">Hobby</a>
-            <a href="/hobby">
+            <a href="/startup">Startup Experience</a>
+            <a href="/startup">
               <img
-                src={hobby1}
+                src={startup1}
                 height="300px"
                 href="/hobbyaactivites"
                 className="center"
               />
             </a>
             <p>
-              กิจกรรมส่วนตัวต่างๆ ที่ผมชอบทำในเวลาว่าง ตอนแรกก็คิดว่า
-              <br></br>ส่วนนี้มันไม่ได้สำคัญอะไร แต่พอลองคิดดูอีกทีลักษณะ
-              <br></br>กิจกรรมที่เราทำมันก็สามารถบ่งบอกตัวจนเราได้เช่นกัน
+              ส่วนนี้เป็นกิจกรรมที่เกี่ยวกับการทำกิจกรรมในเชิงธุรกิจต่างๆนะครับ
+              <br></br>ผมรู้สึกว่านอกจากการที่เราได้ไปหาความรู้อื่นอกสายวิศวะ
+              <br></br>เรายังได้ลองทำงานเป็นทีม และยังได้เรียนรู้จากคนรอบตัว
             </p>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import axios from 'axios';
 import banana from '../image/banana.png';
 import apple from '../image/apple.png';
@@ -14,6 +14,10 @@ import {
   Row,
   Col,
   CardHeader,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
 } from 'reactstrap';
 
 export default class result extends Component {
@@ -27,7 +31,8 @@ export default class result extends Component {
 
   async componentDidMount() {
     ReactGA.pageview(window.location.pathname);
-    if (this.props.location.name == '') {
+
+    if (this.props.location.name == undefined) {
       alert('Please input your name before enter store');
       this.props.history.push({ pathname: '/miniproj' });
     }
@@ -52,10 +57,39 @@ export default class result extends Component {
     alert('Deleting your profile');
     this.props.history.push({ pathname: '/miniproj' });
   };
+  // modal = async () => {
+  //   const [modal, setModal] = useState(false);
+
+  //   const toggle = () => setModal(!modal);
+  //   return (
+  //     <div>
+  //       <Modal isOpen={modal} toggle={toggle}>
+  //         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+  //         <ModalBody>
+  //           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+  //           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+  //           ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+  //           aliquip ex ea commodo consequat. Duis aute irure dolor in
+  //           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+  //           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+  //           culpa qui officia deserunt mollit anim id est laborum.
+  //         </ModalBody>
+  //         <ModalFooter>
+  //           <Button color="primary" onClick={toggle}>
+  //             Do Something
+  //           </Button>{' '}
+  //           <Button color="secondary" onClick={toggle}>
+  //             Cancel
+  //           </Button>
+  //         </ModalFooter>
+  //       </Modal>
+  //     </div>
+  //   );
+  // };
   renderContent() {
     switch (this.state.status) {
       case 'User':
-        return <Button onClick={this.deleteUser}>Delete</Button>;
+        return <Button onClick={this.deleteUser}>Delete Cart</Button>;
       default:
         break;
     }
@@ -63,6 +97,9 @@ export default class result extends Component {
   saveUser = async (e) => {
     if (e.target.id == 'buy') {
       await this.setState({ banana: 0, apple: 0, orange: 0 });
+      alert('Thank for visiting');
+    } else {
+      alert('Your item on cart is already save. See you next time!');
     }
     const sendObj = {
       name: this.state.name,
@@ -75,18 +112,18 @@ export default class result extends Component {
     } else {
       const profile = await axios.post('/apicreate', sendObj);
     }
-    alert('Thank for visiting');
+
     this.props.history.push({ pathname: '/miniproj' });
   };
 
   onChange = async (e) => {
     switch (e.target.id) {
       case 'addbanana':
-        return this.setState({ banana: this.state.banana + 1 });
+        return this.setState({ banana: this.state.banana - 1 + 2 });
       case 'addapple':
-        return this.setState({ apple: this.state.apple + 1 });
+        return this.setState({ apple: this.state.apple - 1 + 2 });
       case 'addorange':
-        return this.setState({ orange: this.state.orange + 1 });
+        return this.setState({ orange: this.state.orange - 1 + 2 });
       case 'subbanana':
         return this.setState({ banana: this.state.banana - 1 });
       case 'subapple':
@@ -127,7 +164,12 @@ export default class result extends Component {
             <Card>
               <CardHeader>Apple</CardHeader>
 
-              <img width="100%" src={apple} alt="Apple image" />
+              <img
+                className="centerimg"
+                width="50%"
+                src={apple}
+                alt="Apple image"
+              />
               <CardBody>
                 <CardText>
                   Click on "+" or "-" change the number of apple that you want
@@ -148,7 +190,7 @@ export default class result extends Component {
                     <FormGroup>
                       <Input
                         className="text-center"
-                        type="numberarea"
+                        type="number"
                         id="apple"
                         value={this.state.apple}
                         onChange={this.onChangeField}
@@ -172,7 +214,12 @@ export default class result extends Component {
             <Card>
               <CardHeader>Banana</CardHeader>
 
-              <img width="100%" src={banana} alt="Banana image" />
+              <img
+                className="centerimg"
+                width="50%"
+                src={banana}
+                alt="Banana image"
+              />
               <CardBody>
                 <CardText>
                   Click on "+" or "-" change the number of banana that you want
@@ -217,7 +264,12 @@ export default class result extends Component {
             <Card>
               <CardHeader>Orange</CardHeader>
 
-              <img width="100%" src={orange} alt="Orange image" />
+              <img
+                className="centerimg"
+                width="50%"
+                src={orange}
+                alt="Orange image"
+              />
               <CardBody>
                 <CardText>
                   Click on "+" or "-" change the number of orange that you want
@@ -262,7 +314,7 @@ export default class result extends Component {
         <div className="buttonalign">
           {this.renderContent()}{' '}
           <Button onClick={this.saveUser} id="save">
-            Save
+            Save Cart
           </Button>{' '}
           <Button color="warning" onClick={this.saveUser} id="buy">
             Buy
