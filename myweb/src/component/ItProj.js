@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import IT1 from '../image/IT1.JPG';
-import senior1 from '../image/Senior1.png';
+import senior2 from '../image/senior2.png';
 import ReactGA from 'react-ga';
 
 export default class ItProj extends Component {
@@ -14,7 +14,7 @@ export default class ItProj extends Component {
       <div className="container">
         <div className="pagecontent">
           <h5>Senior Project</h5>
-          <img src={senior1} width="50%" />
+          <img src={senior2} width="50%" />
           <p>
             นี่คือครั้งแรกเลยครับที่ผมได้ลองเขียนเว็บไซต์แบบง่ายๆ และได้ศึกษา
             Machine Learning แม้ว่าผมจะศึกษาอยู่ในสาขายานยนต์และการออกแบบ
