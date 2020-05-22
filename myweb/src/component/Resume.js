@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import resume from '../image/Resume.png';
+import resume from '../image/Ekkawin Viriyapak.png';
 import ReactGA from 'react-ga';
 
 class Header extends Component {
@@ -17,7 +17,7 @@ class Header extends Component {
 
     return (
       <div class="resume">
-        <img src={resume}></img>
+        <img height="100%" src={resume}></img>
       </div>
     );
   }

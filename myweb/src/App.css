@@ -76,6 +76,12 @@ font-family: 'Sarabun', sans-serif;
   text-align: center;
   font-size: 20px;
 }
+.homebackground p:nth-child(2) {
+  float: right;
+  margin-top: 70px;
+  margin-right: 30px;
+  font-size: 16px;
+}
 .flex {
   display: flex;
   margin: 10px 30px;

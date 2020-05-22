@@ -31,6 +31,7 @@ class Homepage extends Component {
             ภาคอินเตอร์ฯ ผมทำเว็บนี้ขึ้นมา<br></br>เพื่อเก็บประวัติส่วนตัวของผม
             ผมไม่เคยทำมาก่อนเลย ทั้งหมดนี้ถูกเขียนด้วย Javascript ครับ
           </p>
+          <p>*เว็ปนี้ผมออกแบบมาสำหรับ Desktop เท่านั้นนะครับ*</p>
         </div>
         <div className="flex">
           <div className="flexsum">
