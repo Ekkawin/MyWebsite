@@ -27,6 +27,7 @@ export default class result extends Component {
     apple: 0,
     orange: 0,
     status: 'New User',
+    modal: false,
   };
 
   async componentDidMount() {
@@ -50,21 +51,13 @@ export default class result extends Component {
       });
     }
   }
-  deleteUser = async () => {
-    const profile = await axios.post('/apidelete', {
-      name: this.state.name,
-    });
-    alert('Deleting your profile');
-    this.props.history.push({ pathname: '/miniproj' });
-  };
-  // modal = async () => {
-  //   const [modal, setModal] = useState(false);
-
-  //   const toggle = () => setModal(!modal);
+  // toggle = () => {};
+  // modalD = () => {
+  //   console.log('modal');
   //   return (
   //     <div>
-  //       <Modal isOpen={modal} toggle={toggle}>
-  //         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+  //       <Modal isOpen={this.state.modal} toggle={this.toggle}>
+  //         <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
   //         <ModalBody>
   //           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
   //           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -75,10 +68,10 @@ export default class result extends Component {
   //           culpa qui officia deserunt mollit anim id est laborum.
   //         </ModalBody>
   //         <ModalFooter>
-  //           <Button color="primary" onClick={toggle}>
+  //           <Button color="primary" onClick={this.toggle}>
   //             Do Something
   //           </Button>{' '}
-  //           <Button color="secondary" onClick={toggle}>
+  //           <Button color="secondary" onClick={this.toggle}>
   //             Cancel
   //           </Button>
   //         </ModalFooter>
@@ -86,6 +79,15 @@ export default class result extends Component {
   //     </div>
   //   );
   // };
+
+  deleteUser = async () => {
+    const profile = await axios.post('/apidelete', {
+      name: this.state.name,
+    });
+    alert('Deleting your profile');
+    this.props.history.push({ pathname: '/miniproj' });
+  };
+
   renderContent() {
     switch (this.state.status) {
       case 'User':
