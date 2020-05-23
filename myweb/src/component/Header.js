@@ -12,7 +12,7 @@ class Header extends Component {
     return (
       <nav className="nav-background">
         <div className="my-nav">
-          <a href="/">Ekkawin</a>
+          <a href="/">Ekkawin V.</a>
           <a href="/contactme">Contact me</a>
           <a href="/resume">Resume</a>
         </div>
