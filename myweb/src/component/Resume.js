@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import resume from '../image/Ekkawin Viriyapak.png';
+import resume from '../image/Resume.png';
 import ReactGA from 'react-ga';
 
 class Header extends Component {
